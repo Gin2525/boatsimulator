@@ -9,13 +9,13 @@
             <tr class = "line0">
                 <th>player</th>
                 <th>ポイント</th>
-                <th>ポイント順位</th>
+                <th>優先度</th>
             </tr>
             {% for i in range(6) %}
                 <tr class = "{{points[i][0]}}">
                     <td class = "player">{{points[i][0]}}</td>
                     <td>{{points[i][1]}}</td>
-                    <td>優先度:{{7-points[i][2]}}</td>
+                    <td>優先度:{{points[i][2]}}</td>
                 </tr>
             {% endfor %}
         </table>

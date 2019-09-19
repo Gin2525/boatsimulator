@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-w = [1,1,1,1,30]#重みの宣言
+w = [1.0,1.0,1.0,1.0,30.0]#重みの宣言
 
 @app.route('/')
 def simulator():
@@ -26,11 +26,11 @@ def reusults():
         scores[i].append(int(request.form[f"player{i+1}_cOf"])) # フライングは最後に格納。
 
     #重みを格納
-    w[0]=int(request.form["w_rOw"])
-    w[1]=int(request.form["w_moter"])
-    w[2]=int(request.form["w_starttime"])
-    w[3]=int(request.form["w_tOe"])
-    w[4]=int(request.form["w_cOf"])
+    w[0]=float(request.form["w_rOw"])
+    w[1]=float(request.form["w_moter"])
+    w[2]=float(request.form["w_starttime"])
+    w[3]=float(request.form["w_tOe"])
+    w[4]=float(request.form["w_cOf"])
 
     # 格納終わり。ポイントの計算を行う。
 
@@ -39,7 +39,7 @@ def reusults():
         point = 0
         points[i].append(f"player{i+1}")
         if scores[i][4] == 2: #cOfが2なら失格にする。
-            points[i].append(0) #0を格納
+            points[i].append("失格") 
             continue #0のまま次の選手に。
         else:
             for j in range(4):
@@ -49,15 +49,18 @@ def reusults():
 
     #points[i][2]に順番づけを行う為にソート済みのpointsを用意。
     for i in range(6):
-        points[i].append(0)#ついでにpoints[2]に初期値を代入
-        sorted_points.append(points[i][1])#ソート用の配列に格納
+        if points[i][1]=="失格":
+            points[i].append("失格")
+        else: 
+            points[i].append(0)#ついでにpoints[2]に初期値を代入
+            sorted_points.append(points[i][1])#ソート用の配列に格納
     sorted_points = sorted(sorted_points,reverse=True) #降順でソートを行う。
 
     #points[i][2]に順番に対応している数字を格納する。
-    for i in range(6):
-        for j in range(6):
-            if points[j][2]==0 and points[j][1]==sorted_points[i]: #sortedからpoints[i][1]と同じものを探す
-                points[j][2]=i+1
+    for i in range(len(points)):
+        for j in range(len(sorted_points)):
+            if points[i][1] == sorted_points[j] and points[i][2]==0:
+                points[i][2] = len(sorted_points)-j
                 break
 
     #最終的に[player, point, rank]をhtmlに渡す。
