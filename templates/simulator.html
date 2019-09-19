@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='simulator.css') }}">
+        <title>ボートシュミレーター</title>
+    </head>
+    <body>
+        <form action="/results" method = "POST">
+            <datalist id="numberList">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
+            </datalist>
+            <datalist id="numberList2">
+                <option value="0"></option>
+                <option value="1"></option>
+                <option value="2"></option>
+            </datalist>
+            <div class = "out_frame">
+
+                <table class = "player_table">
+
+                    <div class = "frame1">
+                        <tr class = "headline1">
+                            <th>Player</th>
+                            <th>選手勝率順番</th>
+                            <th>モーター勝率順番</th>
+                            <th>平均スタートタイム順番</th>
+                            <th>フライング回数</th>
+                            <th>展示タイムスコア順番</th>
+                        </tr>
+                        
+                        <tr class = "inputArea1">
+                            <th>player1</th>
+                            <td><input name = "player1_rOw" type="number"  list = "numberList" min="1" max="6"  required></td><!--rate of winning-->
+                            <td><input name = "player1_moter" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player1_starttime" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player1_cOf" type="number"  list = "numberList2" min="0" max="2" value="0" required></td><!--count of flying-->
+                            <td><input name = "player1_tOe" type="number"  list = "numberList" min="1" max="6"  required></td><!--time of exhibition-->
+                        </tr>
+                    </div>
+
+                    <div class = "frame2">
+                        
+                        <tr class = "inputArea2">
+                            <th>player2</th>
+                            <td><input name = "player2_rOw" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player2_moter" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player2_starttime" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player2_cOf" type="number"  list = "numberList2" min="0" max="2" value="0" required></td>
+                            <td><input name = "player2_tOe" type="number"  list = "numberList" min="1" max="6"  required></td>
+                        </tr>
+                    </div>
+
+                    <div class = "frame3">
+                        
+                        <tr class = "inputArea3">
+                            <th>player3</th>
+                            <td><input name = "player3_rOw" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player3_moter" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player3_starttime" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player3_cOf" type="number"  list = "numberList2" min="0" max="2" value="0" required></td>
+                            <td><input name = "player3_tOe" type="number"  list = "numberList" min="1" max="6"  required></td>
+                        </tr>
+                    </div>
+
+                    <div class = "frame4">
+                        
+                        <tr class = "inputArea4">
+                            <th>player4</th>
+                            <td><input name = "player4_rOw" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player4_moter" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player4_starttime" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player4_cOf" type="number"  list = "numberList2" min="0" max="2" value="0" required></td>
+                            <td><input name = "player4_tOe" type="number"  list = "numberList" min="1" max="6"  required></td>
+                        </tr>
+                    </div>
+
+                    <div class = "frame5">
+                        <tr class = "inputArea5">
+                            <th>player5</th>
+                            <td><input name = "player5_rOw" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player5_moter" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player5_starttime" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player5_cOf" type="number"  list = "numberList2" min="0" max="2" value="0" required></td>
+                            <td><input name = "player5_tOe" type="number"  list = "numberList" min="1" max="6"  required></td>
+                        </tr>
+                    </div>
+
+                    <div class = "frame6">
+                        
+                        <tr class = "inputArea6">
+                            <th>player6</th>
+                            <td><input name = "player6_rOw" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player6_moter" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player6_starttime" type="number"  list = "numberList" min="1" max="6"  required></td>
+                            <td><input name = "player6_cOf" type="number"  list = "numberList2" min="0" max="2" value="0" required></td>
+                            <td><input name = "player6_tOe" type="number"  list = "numberList" min="1" max="6"  required></td>
+                        </tr>
+                    </div>
+
+                    <div class="frame6">
+                    
+                        <tr class="inputArea7">
+                            <th>重要度</th>
+                            <td><input type="text" name ="w_rOw" value={{w[0]}}></td>
+                            <td><input type="text" name="w_moter" value={{w[1]}}></td>
+                            <td><input type="text" name="w_starttime" value={{w[2]}}></td>
+                            <td><input type="text" name="w_cOf" value={{w[4]}}></td>
+                            <td><input type="text" name="w_tOe" value={{w[3]}}></td>
+                        </tr>
+                    </div>
+
+                </table>
+                <input type="submit" id="submit_button" value="シュミレート">
+            </div>
+        </form>
+    </body>
+</html>

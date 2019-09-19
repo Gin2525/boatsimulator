@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='results.css') }}">
+        <title>シュミレート結果</title>
+    </head>
+    <body>
+        <table>
+            <tr class = "line0">
+                <th>player</th>
+                <th>ポイント</th>
+                <th>ポイント順位</th>
+            </tr>
+            {% for i in range(6) %}
+                <tr class = "{{points[i][0]}}">
+                    <td class = "player">{{points[i][0]}}</td>
+                    <td>{{points[i][1]}}</td>
+                    <td>優先度:{{7-points[i][2]}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <form action="/">
+            <input type="submit" value="シュミレーターに戻る">
+        </form>
+    </body>
+</html>

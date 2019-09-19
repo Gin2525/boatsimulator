@@ -1,0 +1,56 @@
+body{
+    width:100%;
+}
+
+table,input{
+    margin: 20px auto;
+}
+
+table,th,td{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+th,td{
+    height:75px;
+    padding:10px 10px;
+    text-align: center;
+}
+table .player{
+    padding:10px 60px;
+}
+
+input{
+    border-radius: 3px;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border:1px solid silver;
+    width:20%;
+    height:5%;
+    display: block;
+    margin: 30px auto;
+    padding:5px 10px;
+    font-size:100%;
+}
+
+.line0{
+    background-color: #e8ece9;
+}
+.player1{
+    background-color: white;
+}
+.player2{
+    background-color: gray;
+
+}
+.player3{
+    background-color: #ea5550;
+}
+.player4{
+    background-color: #0068b7;
+}
+.player5{
+    background-color: #fff352;
+}
+.player6{
+    background-color: #3cb37a;
+}
